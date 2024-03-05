@@ -20,7 +20,7 @@
   </head>
   <body class="py-4">
     <div class="app mx-auto">
-      <h1 class="mb-3">TODO App</h1>
+      <h1 class="mb-3">Iowa City Area <br> Restaurant Deals</h1>
 
       <button
         id="addNew"
@@ -28,59 +28,45 @@
         data-bs-toggle="modal"
         data-bs-target="#modal-add"
       >
-        <span>Add New Todo</span>
+        <span>New Deal</span>
         <i class="fas fa-plus"></i>
       </button>
 
-      <h2 class="text-center my-3">Todos</h2>
+      <h2 class="text-center">Deals</h2>
 
       <div id="todos"></div>
     </div>
 
-    <!-- Modal  for adding a new Todo-->
-    <div
-      class="modal fade"
-      id="modal-add"
-      tabindex="-1"
-      aria-labelledby="modal-title"
-      aria-hidden="true"
-    >
+    <!-- Modal for adding a new Todo -->
+    <div class="modal fade" id="modal-add" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="modal-title">Add New Todo</h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="form-add">
               <label for="title">Todo Title</label>
               <input id="title" type="text" class="form-control" name="" />
-              <div id="msg"></div>
+
+              <!-- New dropdown for selecting day of the week -->
+              <label for="dayOfWeek" class="mt-3">Day of Week</label>
+              <select id="dayOfWeek" class="form-control">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option> 
+              </select>
 
               <label for="desc" class="mt-3">Description</label>
-              <textarea
-                id="desc"
-                name=""
-                class="form-control"
-                cols="30"
-                rows="5"
-              ></textarea>
+              <textarea id="desc" name="" class="form-control" cols="30" rows="5"></textarea>
               <div class="mt-3">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="submit" id="add" class="btn btn-primary">
-                  Add
-                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="add" class="btn btn-primary">Add</button>
               </div>
             </form>
           </div>
@@ -88,52 +74,36 @@
       </div>
     </div>
 
-    <!-- Modal  for editing a Todo-->
-    <div
-      class="modal fade"
-      id="modal-edit"
-      tabindex="-1"
-      aria-labelledby="modal-title"
-      aria-hidden="true"
-    >
+    <!-- Modal for editing a Todo -->
+    <div class="modal fade" id="modal-edit" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="modal-title">
-              Edit Todo #<span id="todo-id"></span>
-            </h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h4 class="modal-title" id="modal-title">Edit Todo #<span id="todo-id"></span></h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="form-edit">
               <label for="title-edit">Todo Title</label>
               <input id="title-edit" type="text" class="form-control" name="" />
-              <div id="msg"></div>
+
+              <!-- Day of the week dropdown -->
+              <label for="dayOfWeek-edit" class="mt-3">Day of Week</label>
+              <select id="dayOfWeek-edit" class="form-control">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+              </select>
 
               <label for="desc-edit" class="mt-3">Description</label>
-              <textarea
-                id="desc-edit"
-                name=""
-                class="form-control"
-                cols="30"
-                rows="5"
-              ></textarea>
+              <textarea id="desc-edit" name="" class="form-control" cols="30" rows="5"></textarea>
               <div class="mt-3">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button type="submit" id="edit" class="btn btn-primary">
-                  Update
-                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="edit" class="btn btn-primary">Update</button>
               </div>
             </form>
           </div>

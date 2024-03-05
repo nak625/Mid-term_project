@@ -1,8 +1,80 @@
-# FastAPI Todo App
+### Changes I made to TODO app
+### Screenshots 
 
-![demo](todo_app.gif)
+## 1. Added Day of week
 
-## 1. Python virtual environment
+Had to add an option in index.html for them to choose a day of the week.
+This value then had to be added to model.py and main.py so that it could be accesses and stored for all CRUD operations.
+
+## 2.Javascript now sorts by todos by day of week
+
+Below is the edited main.js file that shows changes need to sort and show day of week.
+
+  '''bash
+    let dayInput = document.getElementById('dayOfWeek');
+
+    let refreshTodos = () => {
+    todos.innerHTML = '';
+
+    const dayOrder = [ "Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    data
+      .sort((a, b) => {
+        // Get the index of each dayOfWeek in the custom order
+        const indexA = dayOrder.indexOf(a.dayOfWeek);
+        const indexB = dayOrder.indexOf(b.dayOfWeek);
+        
+        // Compare the indexes to determine the order
+        return indexA - indexB;
+      })  
+      .map((x) => {
+        return (todos.innerHTML += `
+          <div id="todo-${x.id}" class="todo-item ${x.dayOfWeek}">
+            <span class="fw-bold fs-4">${x.title}</span>
+            <span class="badge bg-secondary day-${x.dayOfWeek}">${x.dayOfWeek}</span>
+            <pre class="text-secondary ps-3">${x.description}</pre>
+            <span class="options">
+              <i onClick="tryEditTodo(${x.id})" data-bs-toggle="modal" data-bs-target="#modal-edit" class="fas fa-edit"></i>
+              <i onClick="deleteTodo(${x.id})" class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+      `);
+      });
+
+    resetForm();
+    };
+css style additions are below.
+  '''bash
+    /* Define classes for each day of the week */
+    .day-Monday {
+      background-color: #bb1313!important; 
+    }
+
+    .day-Tuesday {
+      background-color: #213112!important; 
+    }
+
+    .day-Wednesday {
+      background-color: #05c505!important; 
+    }
+    .day-Thursday{
+      background-color: #3bad2c!important; 
+    }
+
+    .day-Friday {
+      background-color: #bdbdb0!important;
+    }
+
+    .day-Saturday {
+      background-color: #25b8b8!important;
+    }
+
+    .day-Sunday {
+      background-color: #112dc9!important;
+    }
+
+  
+##  Python virtual environment
 
 ```powershell
 python -m venv venv
@@ -13,7 +85,7 @@ python -m venv venv
 deactivate
 ```
 
-## 2. pip
+##  pip
 
 Pip is automatically installed during a Python installation. You can verify whether pip is
 installed by running the following command in your terminal:

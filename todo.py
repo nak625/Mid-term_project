@@ -14,7 +14,7 @@ async def add_todo(todo: TodoRequest) -> dict:
     global max_id
     max_id += 1  # auto increment ID
 
-    newTodo = Todo(id=max_id, title=todo.title, description=todo.description)
+    newTodo = Todo(id=max_id, title=todo.title, description=todo.description, dayOfWeek=todo.dayOfWeek)
     todo_list.append(newTodo)
     json_compatible_item_data = newTodo.model_dump()
     return JSONResponse(json_compatible_item_data, status_code=status.HTTP_201_CREATED)
