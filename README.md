@@ -1,6 +1,15 @@
-### Changes I made to TODO app
-### Screenshots 
+## Screenshots 
+### My main idea was to allow a way for college students to save money by keeping track of local restaurant and food deals in the area. Things can change a week to week basis and I wouldve liked to add a year component and history tab as well but didn't complete those tasks.
 
+### Here is my base project with a few filler example todos.
+![Base](https://github.com/nak625/assignmnet1/assets/123668402/a54f6c24-b88e-4720-afe3-2cf33ce0a4ab)
+### Day of week is done by html option drop down menu
+![Mid_term](https://github.com/nak625/assignmnet1/assets/123668402/f39cf2cb-a697-47c7-8c1a-b67809bb5a91)
+### Restaurant Deals are sorted on a Sunday-Saturday basis and the days are color coded.
+
+![Sorted](https://github.com/nak625/assignmnet1/assets/123668402/8fc8186e-481e-4064-84c9-d4891065d966)
+
+## Changes I made to TODO app
 ## 1. Added Day of week
 
 Had to add an option in index.html for them to choose a day of the week.
