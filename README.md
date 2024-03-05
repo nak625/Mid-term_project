@@ -82,8 +82,8 @@ css style additions are below.
       background-color: #112dc9!important;
     }
 
-  
-##  Python virtual environment
+## All credit to Dr.Xu below 
+###  Python virtual environment
 
 ```powershell
 python -m venv venv
@@ -94,7 +94,7 @@ python -m venv venv
 deactivate
 ```
 
-##  pip
+###  pip
 
 Pip is automatically installed during a Python installation. You can verify whether pip is
 installed by running the following command in your terminal:
